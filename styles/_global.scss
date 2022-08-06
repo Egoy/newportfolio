@@ -1,3 +1,4 @@
+// Font Family
 @font-face {
     font-family: 'Metropolis';
     font-style: normal;
@@ -44,6 +45,36 @@
     /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
+// Mixins for Media Queries
+@mixin for-phone-only {
+    @media (max-width: 599px) {
+        @content;
+    }
+}
+
+@mixin for-tablet-portrait-up {
+    @media (min-width: 600px) {
+        @content;
+    }
+}
+
+@mixin for-tablet-landscape-up {
+    @media (min-width: 900px) {
+        @content;
+    }
+}
+
+@mixin for-desktop-up {
+    @media (min-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin for-big-desktop-up {
+    @media (min-width: 1800px) {
+        @content;
+    }
+}
 
 body {
     font-family: 'Metropolis', sans-serif;
@@ -57,12 +88,12 @@ $darkBlack: #ABABAB;
     max-width: 1200px;
     margin: 0 auto;
 }
-.container-1 {
+.container--1 {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.container-2 {
+.container--2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 1.2rem;
