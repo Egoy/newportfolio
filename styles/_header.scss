@@ -1,0 +1,14 @@
+.header {
+    border: 2px solid red;
+    padding: 30px 50px 0;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    max-height: 100px;
+    &__panel {
+        ul {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
