@@ -1,6 +1,5 @@
 .nav {
     position: fixed;
-    background: #fff;
     top: 50%;
     right: 0;
     transform: translateY(-50%);
@@ -8,8 +7,8 @@
     margin-right: 2rem;
     &__container {
         position: relative;
-        width: 70px;
-        height: 350px;
+        width: 50px;
+        height: 300px;
         background: $grey;
         border-radius: 35px;
         box-shadow: 0 15px 25px rgba(0,0,0,.1);
@@ -24,8 +23,8 @@
             width: 100%;
             li {
                 position: relative;
-                width: 70px;
-                height: calc(350px / 5);
+                width: 50px;
+                height: calc(300px / 5);
                 z-index: 1;
                 display: flex;
                 justify-content: center;
@@ -35,103 +34,6 @@
                     visibility: visible;
                     transform: translateX(25px) translateY(-50%);
                 }
-            }
-            li:nth-child(1).active ~ .indicator {
-                transform: translateY(calc(70px * 0));
-            }
-            li:nth-child(2).active~.indicator {
-                transform: translateY(calc(70px * 1));
-            }
-            li:nth-child(3).active~.indicator {
-                transform: translateY(calc(70px * 2));
-            }
-            li:nth-child(4).active~.indicator {
-                transform: translateY(calc(70px * 3));
-            }
-            li:nth-child(5).active~.indicator {
-                transform: translateY(calc(70px * 4));
-            }
-            li:nth-child(5).active~.indicator::before{
-                background-color: white;
-            }
-        }
-    }
-    &__links {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        text-align: center;
-        color: $mainBlack;
-    }
-    &__icon {
-        position: relative;
-        display: block;
-        line-height: 75px;
-        text-align: center;
-        transition: 0.5s;
-    }
-    &__title {
-        position: absolute;
-        top: 50%;
-        right: 110px;
-        width: 100px;
-        background: $mainOrange;
-        color: white;
-        transform: translateY(-50%);
-        padding: 5px 10px;
-        border-radius: 3px;
-        transition: 0.5s;
-        box-shadow: 0 5px 15px rgba(0,0,0,.1);
-        opacity: 0;
-        visibility: hidden;
-        font-weight: 700;
-        text-transform: uppercase;
-        &::after {
-                content: '';
-                position: absolute;
-                width: 12px;
-                height: 12px;
-                background: $mainOrange;
-                right: -1px;
-                top: 46%;
-                transform: rotate(45deg) translateY(-50%);
-                border-radius: 3px;
-            }
-    }
-        .indicator {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 70px;
-            height: 70px;
-            transition: 0.5s;
-            &::before {
-                content: '';
-                position: absolute;
-                width: 50px;
-                height: 50px;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                background-color: $mainOrange;
-                border-radius: 50%;
-                transition: 0.5s;
-            }
-        }
-}
-
-@include for-phone-only {
-    .nav {
-        &__container {
-            width: 50px;
-            height: 300px;
-        }
-        ul {
-            li {
-                    width: 50px;
-                    height: calc(300px / 5);
             }
             li:nth-child(1).active~.indicator {
                 transform: translateY(calc(60px * 0));
@@ -157,12 +59,118 @@
                 background-color: white;
             }
         }
+    }
+    &__links {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+        color: $mainBlack;
+    }
+    &__icon {
+        position: relative;
+        display: block;
+        line-height: 75px;
+        text-align: center;
+        transition: 0.5s;
+    }
+    &__title {
+        position: absolute;
+        top: 50%;
+        right: 90px;
+        width: 100px;
+        background: $mainOrange;
+        color: white;
+        transform: translateY(-50%);
+        padding: 5px 10px;
+        border-radius: 3px;
+        transition: 0.5s;
+        box-shadow: 0 5px 15px rgba(0,0,0,.1);
+        opacity: 0;
+        visibility: hidden;
+        font-weight: 700;
+        text-transform: uppercase;
+        &::after {
+                content: '';
+                position: absolute;
+                width: 12px;
+                height: 12px;
+                background: $mainOrange;
+                right: -1px;
+                top: 46%;
+                transform: rotate(45deg) translateY(-50%);
+                border-radius: 3px;
+            }
+    }
+    .indicator {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50px;
+        height: 60px;
+        transition: 0.5s;
+        &::before {
+            content: '';
+            position: absolute;
+            width: 45px;
+            height: 45px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: $mainOrange;
+            border-radius: 50%;
+            transition: 0.5s;
+        }
+    }
+}
+
+@include for-phone-only {
+    .nav {
+        margin-right: 10px;
+        &__container {
+            width: 35px;
+            height: 250px;
+            background: hslA(0, 0%, 23%, .2);
+            ul {
+                li {
+                    width: 35px;
+                    height: calc(250px / 5);
+                    img {
+                        width: 20px;
+                    }
+                }
+                li:nth-child(1).active~.indicator {
+                    transform: translateY(calc(50px * 0));
+                }
+
+                li:nth-child(2).active~.indicator {
+                    transform: translateY(calc(50px * 1));
+                }
+
+                li:nth-child(3).active~.indicator {
+                    transform: translateY(calc(50px * 2));
+                }
+
+                li:nth-child(4).active~.indicator {
+                    transform: translateY(calc(50px * 3));
+                }
+
+                li:nth-child(5).active~.indicator {
+                    transform: translateY(calc(50px * 4));
+                }
+            }
+        }
         &__title {
-            right: 90px;
+            right: 80px;
         }
         .indicator {
-            width: 50px;
-            height: 60px;
+            width: 35px;
+            height: 50px;
+            &::before {
+                opacity: .5;
+            }
         }
     }
 }

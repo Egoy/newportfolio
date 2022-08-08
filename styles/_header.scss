@@ -1,14 +1,67 @@
 .header {
-    border: 2px solid red;
     padding: 30px 50px 0;
     display: flex;
     justify-content: space-between;
     align-content: center;
-    max-height: 100px;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 50px;
+    &__logo {
+        font-size: 20px;
+        p {
+            color: $mainOrange;
+            span {
+                color: $mainBlack;
+            }
+        }
+    }
     &__panel {
         ul {
             display: flex;
             justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
         }
     }
+    @include for-phone-only {
+        padding: 10px;
+        justify-content: center;
+    }
+    @include for-big-desktop-up {
+        padding-left: 200px;
+        padding-right: 200px;
+    }
 }
+
+.hero {
+    height: 40vh;
+    color: $mainBlack;
+    margin-top: 5%;
+    margin-bottom: 100px;
+    span {
+        font-weight: 700;
+        color: #000000;
+        font-size: clamp(3rem, 10vw, 4.8rem);
+        @include for-phone-only {
+            font-weight: normal;
+        }
+    }
+    h2 {
+        display: inline-block;
+        @include for-phone-only {
+            display: block;
+        }
+    }
+    h1 {
+        display: inline;
+        font-weight: 900;
+        font-size: clamp(3rem, 10vw, 6.4rem);
+        color: $mainOrange;
+    }
+    .subtext {
+        margin: 10px 0 20px 0;
+    }
+}
+
