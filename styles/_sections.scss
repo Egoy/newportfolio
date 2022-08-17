@@ -1,0 +1,152 @@
+.skills {
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 100px);
+        justify-items: flex-start;
+        gap: 20px;
+        @include for-phone-only {
+            justify-content: center;
+        }
+    }
+    &__box {
+        display: inline;
+        border: 2px solid $mainBlack;
+        height: 100px;
+        width: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+.portfolio {
+    &__grid {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    &__box {
+        position: relative;
+        background-color: $mainOrange;
+        z-index: -10;
+    }
+
+    &__panel {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        align-content: center;
+    }
+
+    &__text {
+        font-weight: 700;
+    }
+
+    @include for-tablet-landscape-up {
+        cursor: pointer;
+
+        &__panel {
+            position: absolute;
+            display: none;
+            bottom: 0;
+        }
+    }
+}
+
+.contact {
+    &__container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    height: 500px;
+    max-width: 400px;
+    margin: 0 auto;
+    border: 2px solid rgb(116, 116, 116);
+    }
+    &__text {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.2rem;
+        h2 {
+            font-size: 3.2rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: $mainBlack;
+        }
+        .underline {
+            width: 200px;
+            height: 3px;
+            background-color: $mainBlack;
+            display: block;
+        }
+        .icon {
+            height: 40px;
+            width: 40px;
+        }
+    }
+    .form {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        select {
+            outline: none;
+            height: 30px;
+            margin-bottom: 1rem;
+            outline: none;
+            border: none;
+            background-color: transparent;
+            border-bottom: 2px solid $mainOrange;
+            width: 200px;
+            color: $mainBlack;
+        }
+        input {
+            height: 30px;
+            outline: none;
+            border: none;
+            background-color: transparent;
+            border-bottom: 2px solid $mainOrange;
+            margin-bottom: 1rem;
+            width: 200px;
+        }
+        textarea {
+            outline: none;
+            border: none;
+            background-color: transparent;
+            border: 2px solid $mainOrange;
+            margin-bottom: 1rem;
+            width: 200px;
+            resize: none;
+        }
+    }
+}
+
+.footer {
+    background-color: $mainBlack;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 3rem 0;
+    &__logo {
+        color: $mainOrange;
+        font-size: 2rem;
+        span {
+            color: white;
+        }
+    }
+    ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        li {
+            display: inline;
+        }
+    }
+}

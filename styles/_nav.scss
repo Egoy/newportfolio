@@ -75,6 +75,7 @@
         line-height: 75px;
         text-align: center;
         transition: 0.5s;
+        cursor: pointer;
     }
     &__title {
         position: absolute;
@@ -173,4 +174,11 @@
             }
         }
     }
+}
+
+.inactive {
+    display: none;
+}
+.active {
+    display: block;
 }
